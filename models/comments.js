@@ -19,7 +19,7 @@ Comment.init(
         key: "id",
       },
     },
-    comment_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "posts",
@@ -38,3 +38,5 @@ Comment.init(
     freezeTableName: false,
   }
 );
+
+module.exports = Comment;
