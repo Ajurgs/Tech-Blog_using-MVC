@@ -1,5 +1,3 @@
-const e = require("express");
-
 const login = async (event) => {
   event.preventDefault();
   const username = document.querySelector("#username-input").value.trim();
@@ -18,3 +16,5 @@ const login = async (event) => {
     }
   }
 };
+
+document.querySelector("#login-form").addEventListener("submit", login);
