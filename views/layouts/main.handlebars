@@ -21,6 +21,8 @@
     <main>
       {{{body}}}
     </main>
-    <script src="/js/navbar.js"></script>
+    {{#if loggedIn}}
+      <script src="/js/navbar.js"></script>
+    {{/if}}
   </body>
 </html>
