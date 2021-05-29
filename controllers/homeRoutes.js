@@ -1,10 +1,22 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Post } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage");
+    const posts = await Post.findAll();
+    console.log(posts);
+    res.render("homepage"),
+      {
+        posts,
+        loggedIn: req.session.loggedIn,
+      };
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get("/dashboard", withAuth, (req, res) => {
+  try {
   } catch (err) {
     res.status(500).json(err);
   }
