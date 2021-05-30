@@ -7,7 +7,7 @@ const addPost = async function (event) {
 
   let post = { title, text, user_Id };
   await fetch(`/api/posts`, {
-    method: "PUT",
+    method: "POST",
     body: JSON.stringify(post),
     headers: {
       "Content-Type": "application/json",
