@@ -1,7 +1,9 @@
-<section class="dashboard">
-  <a href="/dashboard/new">➕ New Post</a>
+<section class="dashboard container-fluid">
+  <div class="column d-flex justify-content-end">
+    <a class="btn btn-primary m-3" href="/dashboard/new">➕ New Post</a>
+  </div>
 
-  <section class="posts">
+  <section class="column posts">
     {{#each posts}}
       <article class="card">
         <div class="card-header">

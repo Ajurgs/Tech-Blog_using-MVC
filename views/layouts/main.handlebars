@@ -8,13 +8,18 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
         {{#if loggedIn}}
-          <button id="logout" class="btn-no-style">Logout</button>
+          <button
+            id="logout"
+            class="btn btn-link"
+            style="text-decoration: none;"
+          >Logout</button>
         {{else}}
-          <a href="/login">Login</a>
+          <a class="nav-link" href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
