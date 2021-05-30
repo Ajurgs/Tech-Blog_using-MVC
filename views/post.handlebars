@@ -24,6 +24,14 @@
             <p>{{text}}</p>
             <p>{{User.username}}, {{format_date createdAt}}</p>
           </div>
+          <blockquote class="blockquote">
+            <p class="mb-0">{{text}}</p>
+
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            {{User.username}},
+            <cite title="Source Title">{{format_date createdAt}}</cite>
+          </figcaption>
         {{/each}}
       </section>
     </section>
