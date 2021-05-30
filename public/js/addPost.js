@@ -3,9 +3,9 @@ const addPost = async function (event) {
 
   const title = document.querySelector("#title").value.trim();
   const text = document.querySelector("#text").value.trim();
-  const userId = document.querySelector("#userId").value;
+  const user_Id = document.querySelector("#userId").value;
 
-  let post = { title, text, userId };
+  let post = { title, text, user_Id };
   await fetch(`/api/posts`, {
     method: "PUT",
     body: JSON.stringify(post),

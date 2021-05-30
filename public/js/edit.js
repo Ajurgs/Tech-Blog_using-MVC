@@ -7,7 +7,7 @@ const editFormSubmit = async function (event) {
   const text = document.querySelector("#text").value.trim();
 
   let post = { title, text };
-  await fetch(`/api/post/${postId}`, {
+  await fetch(`/api/posts/${postId}`, {
     method: "PUT",
     body: JSON.stringify(post),
     headers: {
@@ -18,7 +18,7 @@ const editFormSubmit = async function (event) {
 };
 
 const deletePost = async function () {
-  await fetch(`/api/post/${postId}`, {
+  await fetch(`/api/posts/${postId}`, {
     method: "DELETE",
   });
   document.location.replace("/dashboard");
