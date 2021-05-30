@@ -1,0 +1,47 @@
+<section class="post">
+  <article class="card">
+    <div class="card-header">
+      <h1>{{post.title}}</h1>
+      <div>
+        Posted by
+        {{User.username}}
+        on
+        {{format_date createdAt}}
+      </div>
+    </div>
+    <section class="card-body">
+      {{post.text}}
+    </section>
+  </article>
+  {{#if post.Comments}}
+    <section class="card">
+      <div class="card-header">
+        <h2>Comments</h2>
+      </div>
+      <section class="card-body">
+        {{#each post.Comments}}
+          <div>
+            <p>{{text}}</p>
+            <p>{{User.username}}, {{format_date createdAt}}</p>
+          </div>
+        {{/each}}
+      </section>
+    </section>
+  {{/if}}
+
+  <form id="new-Comment" class="card">
+    <div class="card-header">
+      <h3>Add Comment</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" id="post_id" value="{{post.id}}" />
+      <label for="comment-text" class="form-label">Comment</label>
+      <textarea name="comment-text" id="text"></textarea>
+
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</section>
+
+<script src="/js/comment.js"></script>
