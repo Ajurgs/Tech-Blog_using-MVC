@@ -10,7 +10,9 @@ router.get("/", withAuth, (req, res) => {
         user_id: req.session.userId,
       },
     });
-    res.render("dashboard");
+    res.render("dashboard", {
+      userPosts,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
