@@ -3,8 +3,8 @@ const postId = document.querySelector("#id").value;
 const editFormSubmit = async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector("#title").value;
-  const text = document.querySelector("#text").value;
+  const title = document.querySelector("#title").value.trim();
+  const text = document.querySelector("#text").value.trim();
 
   let post = { title, text };
   await fetch(`/api/post/${postId}`, {
