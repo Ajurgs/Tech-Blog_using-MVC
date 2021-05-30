@@ -10,7 +10,6 @@ router.get("/", withAuth, async (req, res) => {
         user_id: req.session.userId,
       },
     });
-    console.log(userPosts);
     const posts = userPosts.map((post) => post.get({ plain: true }));
 
     res.render("dashboard", {
