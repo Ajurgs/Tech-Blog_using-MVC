@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
       text: req.body.text,
       user: req.session.userId,
     });
-    res.json(newPostData);
+    res.status(200).json(newPostData);
   } catch (err) {
     res.status(500).json(err);
   }
