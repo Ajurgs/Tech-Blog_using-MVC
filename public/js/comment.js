@@ -1,9 +1,9 @@
 const addComment = async function (event) {
   event.preventDefault();
 
-  const postId = document.querySelector("#post_id");
-  const text = document.querySelector("#text");
-
+  const postId = document.querySelector("#post_id").value;
+  const text = document.querySelector("#text").value.trim();
+  console.log(postId);
   if (text) {
     let comment = { postId, text };
     await fetch("/api/comment", {

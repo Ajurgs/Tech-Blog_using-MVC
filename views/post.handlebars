@@ -4,7 +4,7 @@
       <h1>{{post.title}}</h1>
       <div>
         Posted by
-        {{User.username}}
+        {{post.user.username}}
         on
         {{format_date post.createdAt}}
       </div>
@@ -13,23 +13,19 @@
       {{post.text}}
     </section>
   </article>
-  {{#if post.Comments}}
+  {{#if post.comments}}
     <section class="card">
       <div class="card-header">
         <h2>Comments</h2>
       </div>
       <section class="card-body">
-        {{#each post.Comments}}
-          <div>
-            <p>{{text}}</p>
-            <p>{{User.username}}, {{format_date createdAt}}</p>
-          </div>
+        {{#each post.comments}}
           <blockquote class="blockquote">
             <p class="mb-0">{{text}}</p>
 
           </blockquote>
           <figcaption class="blockquote-footer">
-            {{User.username}},
+            {{user.username}},
             <cite title="Source Title">{{format_date createdAt}}</cite>
           </figcaption>
         {{/each}}
