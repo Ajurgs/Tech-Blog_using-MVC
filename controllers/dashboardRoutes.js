@@ -7,7 +7,7 @@ router.get("/", withAuth, async (req, res) => {
     // get user posts
     const userPosts = await Post.findAll({
       where: {
-        userId: req.session.userId,
+        user_Id: req.session.userId,
       },
     });
     const posts = userPosts.map((post) => post.get({ plain: true }));

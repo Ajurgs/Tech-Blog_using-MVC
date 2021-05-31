@@ -19,20 +19,13 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "users",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {},
     sequelize,
     freezeTableName: false,
     timestamps: true,
-    underscored: false,
+    underscored: true,
     modelName: "posts",
   }
 );
