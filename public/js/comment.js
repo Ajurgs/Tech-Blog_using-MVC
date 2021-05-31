@@ -2,7 +2,7 @@ const addComment = async function (event) {
   event.preventDefault();
 
   const postId = document.querySelector("#post_id");
-  const text = document.querySelector("#comment-text");
+  const text = document.querySelector("#text");
 
   if (text) {
     let comment = { postId, text };
