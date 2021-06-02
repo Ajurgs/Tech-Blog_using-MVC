@@ -1,32 +1,39 @@
 <section class="container">
-  <div class="card">
+  <div class="card bg-dark my-3">
     <div class="card-header">
       <h2>New Post</h2>
     </div>
+    <form class="card-body d-flex flex-column" id="post-form">
+      <input
+        type="hidden"
+        name="user-id"
+        id="userId"
+        value="{{req.session.userId}}"
+      />
+
+      <label class="form-label" for="post-title">Title:</label>
+      <input
+        type="text"
+        name="post-title"
+        id="title"
+        class="form-input"
+        required
+      />
+
+      <label class="form-label" for="post-text">Text:</label>
+      <textarea
+        name="post-text"
+        id="text"
+        class="form-input"
+        required
+      ></textarea>
+      <div class="align-self-end">
+        <button type="submit" class="btn btn-primary my-3">Post</button>
+      </div>
+
+    </form>
   </div>
-  <form class="card-body" id="post-form">
-    <input
-      type="hidden"
-      name="user-id"
-      id="userId"
-      value="{{req.session.userId}}"
-    />
 
-    <label class="form-label" for="post-title">Title</label>
-    <input
-      type="text"
-      name="post-title"
-      id="title"
-      class="form-input"
-      required
-    />
-
-    <label class="form-label" for="post-text">Text</label>
-    <textarea name="post-text" id="text" class="form-input" required></textarea>
-
-    <button type="submit" class="btn">Post</button>
-
-  </form>
 </section>
 
 <script src="/js/addPost.js"></script>

@@ -37,7 +37,7 @@
     <div class="card-header">
       <h3>Add Comment</h3>
     </div>
-  {{#if req.session.loggedIn}}
+  {{#if loggedIn}}
     <div class="card-body d-flex flex-column">
       <input type="hidden" id="post_id" value="{{post.id}}" />
       <label for="comment-text" class="form-label">Comment:</label>

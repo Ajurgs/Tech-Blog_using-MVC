@@ -1,20 +1,24 @@
-<section class="dashboard container-fluid">
-  <div class="column d-flex justify-content-end">
+<section class="dashboard container">
+  <div class="column d-flex justify-content-between">
+    <h1>Your Dashboard</h1>
     <a class="btn btn-primary m-3" href="/dashboard/new">➕ New Post</a>
   </div>
 
   <section class="column posts">
     {{#each posts}}
-      <article class="card">
-        <div class="card-header">
+      <article class="card mt-3">
+        <div class="card-header d-flex justify-content-between">
           <h2>
             {{title}}
           </h2>
-          <a href="/dashboard/edit/{{id}}">✏ Edit</a>
-          <div>
-            Posted on:
-            {{format_date createdAt}}
+          <div class="d-flex flex-column justify-content-between">
+            <a href="/dashboard/edit/{{id}}" class="btn btn-primary">✏ Edit</a>
+            <div>
+              Posted on:
+              {{format_date createdAt}}
+            </div>
           </div>
+
         </div>
         <div class="card-body">
           {{text}}
