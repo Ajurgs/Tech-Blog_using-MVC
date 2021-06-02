@@ -1,8 +1,8 @@
-<section class="post">
-  <article class="card">
-    <div class="card-header">
+<section class="container post">
+  <article class="card my-3">
+    <div class="card-header d-flex justify-content-between">
       <h1>{{post.title}}</h1>
-      <div>
+      <div class="align-self-end">
         Posted by
         {{post.user.username}}
         on
@@ -14,7 +14,7 @@
     </section>
   </article>
   {{#if post.comments}}
-    <section class="card">
+    <section class="card my-3">
       <div class="card-header">
         <h2>Comments</h2>
       </div>
@@ -33,17 +33,26 @@
     </section>
   {{/if}}
 
-  <form id="new-comment" class="card">
+  <form id="new-comment" class="card my-3">
     <div class="card-header">
       <h3>Add Comment</h3>
     </div>
-
-    <div class="card-body">
+  {{#if req.session.loggedIn}}
+    <div class="card-body d-flex flex-column">
       <input type="hidden" id="post_id" value="{{post.id}}" />
-      <label for="comment-text" class="form-label">Comment</label>
+      <label for="comment-text" class="form-label">Comment:</label>
       <textarea name="comment-text" id="text"></textarea>
-
-      <button type="submit" class="btn">Submit</button>
+      <div class="d-flex justify-content-end p-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  {{else}}
+    <div class="p-3 d-flex justify-content-center">
+      <p class="me-3">
+        You need to be logged in to comment!
+      </p>
+      <a href="/login">Log In Here</a>
+    </div>
+  {{/if}}
     </div>
   </form>
 </section>

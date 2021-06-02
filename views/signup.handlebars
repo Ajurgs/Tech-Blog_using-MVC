@@ -1,18 +1,26 @@
-<section class="card">
-  <div class="card-header">
-    <h2>Sign Up</h2>
-  </div>
-  <form id="signup-form" class="card-body">
-    <div>
-      <label for="username-signup">Username:</label>
-      <input type="text" id="username-signup" required autocomplete="off" />
+<div class="container">
+  <section class="card my-3">
+    <div class="card-header">
+      <h2>Sign Up</h2>
     </div>
-    <div>
-      <label for="password-signup">Password:</label>
-      <input type="password" id="password-signup" required />
-    </div>
-    <button type="submit" id="login-btn" class="btn">Sign Up!</button>
-  </form>
-</section>
+    <form
+      id="signup-form"
+      class="card-body d-flex flex-column align-items-center"
+    >
+      <div class="d-flex mt-3">
+        <label for="username-signup" style="width: 80;">Username:</label>
+        <input type="text" id="username-signup" required autocomplete="off" />
+      </div>
+      <div class="d-flex mb-3">
+        <label for="password-signup" style="width: 80;">Password:</label>
+        <input type="password" id="password-signup" required />
+      </div>
+      <div>
+        <button type="submit" id="login-btn" class="btn btn-primary my-3">Sign
+          Up!</button>
+      </div>
+    </form>
+  </section>
+</div>
 
 <script src="/js/signup.js"></script>

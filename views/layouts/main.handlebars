@@ -9,18 +9,20 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex justify-content-start">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          {{#if loggedIn}}
+            <button
+              id="logout"
+              class="btn btn-link"
+              style="text-decoration: none;"
+            >Logout</button>
+          {{else}}
+            <a class="nav-link" href="/login">Login</a>
+          {{/if}}
+        </div>
 
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/dashboard">Dashboard</a>
-        {{#if loggedIn}}
-          <button
-            id="logout"
-            class="btn btn-link"
-            style="text-decoration: none;"
-          >Logout</button>
-        {{else}}
-          <a class="nav-link" href="/login">Login</a>
-        {{/if}}
       </nav>
     </header>
     <main>
